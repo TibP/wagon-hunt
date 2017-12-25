@@ -1,5 +1,37 @@
 class ProductsController < ApplicationController
-  # Avec recupération d'un tableua en dur
+
+
+  def index
+    @products=Product.all
+  end
+
+  def show
+    index=params[:id].to_i
+    @product=Product.find(index)
+  end
+
+  def new
+
+  end
+
+  def create
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def desroy
+
+  end
+
+#-------------------------------
+ # Avec recupération d'un tableua en dur
   # PRODUCTS=[
   #           {name: "Kudoz" , category: "pro"},
   #           {name: "uSlide" , category: "education"},
@@ -13,14 +45,4 @@ class ProductsController < ApplicationController
   #     @products=PRODUCTS
   #   end
   # end
-
-  def index
-    @products=Product.all
-  end
-
-  def show
-    index=params[:id].to_i
-    @product=Product.find(index)
-  end
-
 end
