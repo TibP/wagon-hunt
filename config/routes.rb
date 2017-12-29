@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/team" => "pages#team"
   get "/contact" => "pages#join_us"
 
-resources :products
+resources :products # liste toutes les 7 routes classiques ci-dessous
 
 # # Read action routes
 #   get "/products" => "products#index"
