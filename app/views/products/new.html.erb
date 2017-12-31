@@ -5,11 +5,8 @@
       <h1 class="text-center">Ajouter un produit</h1>
 
       <!-- création de formulaire rails  possible avec form_for-->
-      <%= simple_form_for @product do |f| %>
-        <%= f.input :name, placeholder: "kudoz", label:"Which product?" %>
-        <%= f.input :url, placeholder: "http://getkudoz.com", label:"Which URL?"%>
-        <%= f.button :submit, "Ajouter", class:"btn btn-primary" %>
-      <% end%>
+      <!-- cf. _form.html -->
+      <%= render "form" %>
 
       <!-- Création de formulaire bootstrap
       <form action="/products" method="post">

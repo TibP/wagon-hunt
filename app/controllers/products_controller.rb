@@ -1,13 +1,14 @@
 class ProductsController < ApplicationController
-
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products=Product.all
   end
 
   def show
-    index=params[:id].to_i
-    @product=Product.find(index)
+    # index=params[:id].to_i
+    # @product=Product.find(index)
+    # ds la method fin_product -> @product=Product.find(params[:id])
   end
 
   def new
@@ -16,7 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     @product=Product.new(product_params)
-    if @product.save
+    if @product.save #si le pdt est validé i.e bien enregistré
       redirect_to products_path
     else
       #retourne sur la page de formulaire
@@ -26,20 +27,28 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    if @product.update(product_params)
+      redirect_to products_path
+    else
+      render :edit
+    end
   end
 
-  def desroy
-
+  def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
 
   def product_params
     params.require(:product).permit(:name, :url)
+  end
+
+  def find_product
+     @product=Product.find(params[:id])
   end
 
 #-------------------------------
