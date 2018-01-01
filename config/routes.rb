@@ -15,7 +15,7 @@ resources :products # liste toutes les 7 routes classiques ci-dessous
 
 # #Update action routes
 #   get "/products/:id/edit"=>"products#edit"
-#   patch "/products/:id"=>"prodducts#update"
+#   patch "/products/:id"=>"products#update"
 
 # #Delete action routes
 #   delete "products/:id"=>"products#destroy"
