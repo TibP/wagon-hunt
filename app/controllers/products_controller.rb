@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
 
   def create
     @product=Product.new(product_params)
+    @product.user=current_user
     if @product.save #si le pdt est validé i.e bien enregistré
       redirect_to products_path
     else
@@ -38,7 +39,9 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(product_params)
+    #binding.pry
+    if @product.user==current_user
+      @product.update(product_params)
       redirect_to products_path
     else
       render :edit
@@ -46,8 +49,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to products_path
+    if @product.user==current_user
+      @product.destroy
+      redirect_to products_path
+    end
   end
 
 

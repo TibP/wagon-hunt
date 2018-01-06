@@ -12,7 +12,7 @@ User.destroy_all
 
 Thibault=User.create(email:'thibault.pinta@gmail.com', password:'testtest')
 Antoine=User.create(email:'a.devulp@gmail.com', password:'testtest')
-Guillaume=User.create(email:'g.lefebvre.pinta@gmail.com', password:'testtest')
+Guillaume=User.create(email:'g.lefebvre@gmail.com', password:'testtest')
 
 Product.create!(user: Thibault , name: "kudoz", url:"http://getkudoz.com", tagline:"Tinder for job search",category: "Tech")
 Product.create!(user: Antoine , name:"uslide", url:"http://uslide.io", tagline:"Youtube sucks for education",category: "Design")
