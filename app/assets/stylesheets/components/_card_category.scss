@@ -1,24 +1,49 @@
 .card_category{
-    padding: 30px;
-    display: block;
-    text-align: center;
-    line-height: 120px;
-    color: white;
-    font-size: 27px;
-    font-weight: bold;
+  padding: 30px;
+  display: block;
+  text-align: center;
+  line-height: 120px;
+
+  background: white;
+  border-style: solid;
+  border-width: 4px;
+  border-color:rgba(208,53,56,0.7);
+  border-radius: 5px;
+  color:rgba(208,53,56,0.7);
+
+  font-size: 27px;
+  font-weight: bold;
 }
 .padded{
   padding:30px;
 }
 .card_category:hover{
   color: white;
+  background-color:rgba(208,53,56,0.7);
+  border-color: #DD7377;
+  text-decoration:none;
 }
-.card_category.design{
-  background: $green;
+/*.card_category.design{
+  background: white;
+  border-style: solid;
+  border-width: 3px;
+  border-color:rgba(208,53,56,0.7);
+  border-radius: 5px;
+  color:rgba(208,53,56,0.7);
 }
 .card_category.tech{
-  background: $green;
+  background: white;
+  border-style: solid;
+  border-width: 4px;
+  border-color:rgba(208,53,56,0.7);
+  border-radius: 5px;
+  color:rgba(208,53,56,0.7);
 }
 .card_category.education{
-  background: $green;
-}
+  background: white;
+  border-style: solid;
+  border-width: 5px;
+  border-color:rgba(208,53,56,0.7);
+  border-radius: 5px;
+  color:rgba(208,53,56,0.7);
+}*/
