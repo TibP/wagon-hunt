@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def show
     # index=params[:id].to_i
     # @product=Product.find(index)
-    # ds la method fin_product -> @product=Product.find(params[:id])
+    # ds la method find_product -> @product=Product.find(params[:id])
   end
 
   def new

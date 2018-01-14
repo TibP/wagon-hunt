@@ -8,18 +8,32 @@
         <% @products.each do |product| %>
 
           <div class="product">
-            <div class='product-upvote'>
-              <div class="product-arrow"></div>
-              <div class='product-count'>0</div>
-            </div>
+
+            <% if user_signed_in? %>
+              <%#upvote action%>
+              <%= link_to upvotes_path(product_id: product.id), method: :post, class: "product-upvote" do%>
+                <div class="product-arrow"></div>
+                <div class='product-count'>
+                <%= product.upvotes.size %>
+                </div>
+              <% end -%>
+
+            <%else%>
+
+              <div class='product-upvote'>
+                <div class="product-arrow"></div>
+                <div class='product-count'>
+                  <%= product.upvotes.size %>
+                </div>
+              </div>
+
+            <%end%>
 
             <% if product.photo?%>
               <%= cl_image_tag(product.photo.path,width:175,height:117, crop: :fill, class: "product-image")%>
             <% else%>
               <img src="http://unsplash.it/300/200/?random" alt="kudoz" class="product-image hidden-xs">
             <% end %>
-
-
 
             <div class='product-body'>
               <h3><%=product.name%></h3>

@@ -14,6 +14,18 @@ Thibault=User.create(email:'thibault.pinta@gmail.com', password:'testtest')
 Antoine=User.create(email:'a.devulp@gmail.com', password:'testtest')
 Guillaume=User.create(email:'g.lefebvre@gmail.com', password:'testtest')
 
-Product.create!(user: Thibault , name: "kudoz", url:"http://getkudoz.com", tagline:"Tinder for job search",category: "Tech")
-Product.create!(user: Antoine , name:"uslide", url:"http://uslide.io", tagline:"Youtube sucks for education",category: "Design")
-Product.create!(user: Guillaume, name:"Medpics", url:"http://medpics.com", tagline:"Share your diagnostics",category: "Education")
+kudoz = Product.create!(user: Thibault , name: "kudoz", url:"http://getkudoz.com", tagline:"Tinder for job search",category: "Tech")
+uslide = Product.create!(user: Antoine , name:"uslide", url:"http://uslide.io", tagline:"Youtube sucks for education",category: "Design")
+medpics = Product.create!(user: Guillaume, name:"Medpics", url:"http://medpics.com", tagline:"Share your diagnostics",category: "Education")
+
+#upvotes
+
+kudoz.upvotes.create! user: Thibault
+kudoz.upvotes.create! user: Antoine
+
+uslide.upvotes.create! user: Thibault
+uslide.upvotes.create! user: Guillaume
+
+medpics.upvotes.create! user: Thibault
+medpics.upvotes.create! user: Guillaume
+medpics.upvotes.create! user: Antoine
