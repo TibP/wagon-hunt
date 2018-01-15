@@ -11,7 +11,7 @@
 
             <% if user_signed_in? %>
                   <% if current_user.voted_for?(product) #si déjà voté %>
-                    <%= link_to upvote_path(current_user.upvotes.where(product: product).first), method: :delete, class: "product-upvote" do %>
+                    <%= link_to upvote_path(current_user.upvotes.where(product: product).first), method: :delete, class: "product-upvote product-upvoted" do %>
                       <div class="product-arrow"> </div>
                       <div class="product-count"> <%= product.upvotes.size %> </div>
                     <%end%>
