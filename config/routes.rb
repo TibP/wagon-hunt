@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/contact" => "pages#join_us"
 
 resources :products # liste toutes les 7 routes classiques ci-dessous
-resources :upvotes, only: [:create]
+resources :upvotes, only: [:create, :destroy ]
 
 # # Read action routes
 #   get "/products" => "products#index"
